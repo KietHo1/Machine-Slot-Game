@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>40 Super Hot</title>
+  <link rel="shortcut icon" href="TemplateData/unity-logo-dark.png">
+  <link href='https://fonts.googleapis.com/css?family=DM Serif Text' rel='stylesheet'>
+  <link rel="stylesheet" href="/game/{{game_id}}/static/TemplateData/style.css">
+
+  <style>
+    body {
+      scrollbar-width: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .container {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body style="background-color: #090720;">
+  <div id="contanerId" class="container">
+    <div id="unity-container" class="unity-desktop" style="position: absolute;">
+      <canvas id="unity-canvas" style=" height: 100%"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full">
+            <div>
+              <p id="unity-loading-text">Loading: 0%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="unity-warning">
+        <div id="unity-warning-content">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script>
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+    var warningBanner = document.querySelector("#unity-warning");
+    var warningContent = document.querySelector("#unity-warning-content");
+    var loadingText = document.querySelector("#unity-loading-text");
+
+    // Shows a temporary message banner/ribbon for a few seconds, or
+    // a permanent error message on top of the canvas if type=='error'.
+    // If type=='warning', a yellow highlight color is used.
+    // Modify or remove this function to customize the visually presented
+    // way that non-critical warnings and error messages are presented to the
+    // user.
+    function unityShowBanner(msg, type) {
+
+      function updateBannerVisibility(show) {
+        warningBanner.style.display = show ? 'block' : 'none';
+      }
+      var div = document.createElement('div');
+      warningContent.innerHTML = msg;
+
+      updateBannerVisibility(true);
+      setTimeout(function () {
+        updateBannerVisibility();
+      }, 60000);
+    }
+
+    var buildUrl = "/game/{{game_id}}/static/Build";
+    var loaderUrl = buildUrl + "/40SuperHot.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/40SuperHot.data.unityweb",
+      frameworkUrl: buildUrl + "/40SuperHot.framework.js.unityweb",
+      codeUrl: buildUrl + "/40SuperHot.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "FireGame",
+      productName: "40SuperHot",
+      productVersion: "1.0",
+      showBanner: unityShowBanner,
+      cacheControl: function (url) {
+        // Caching enabled for .data and .bundle files.
+        // Revalidate if file is up to date before loading from cache
+        if (url.match(/\.data/) || url.match(/\.bundle/)) {
+          return "must-revalidate";
+        }
+        // Caching enabled for .mp4 and .custom files
+        // Load file from cache without revalidation.
+        if (url.match(/\.mp4/) || url.match(/\.custom/)) {
+          return "immutable";
+        }
+        // Disable explicit caching for all other files.
+        // Note: the default browser cache may cache them anyway.
+        return "no-store";
+      },
+    };
+
+    // By default Unity keeps WebGL canvas render target size matched with
+    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+    // Set this to false if you want to decouple this synchronization from
+    // happening inside the engine, and you would instead like to size up
+    // the canvas DOM size and WebGL render target sizes yourself.
+    // config.matchWebGLToCanvasSize = false;
+
+    var isMobile = /iPhone|iPad|iPod|Android|BB/i.test(navigator.userAgent);
+    if (isMobile) {
+      loadingBar.style.display = "none";
+      container.className = "unity-mobile";
+      // Avoid draining fillrate performance on mobile devices,
+      // and default/override low DPI mode on mobile browsers.
+      config.devicePixelRatio = 1;
+      unityShowBanner('WebGL builds are not supported on mobile devices.');
+    } else {
+      canvas.width = canvas.height * 1920 / 1080;
+      loadingBar.style.display = "block";
+    }
+
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    let gameInstance = null;
+
+    function CallFunc(objectName, funcName) {
+      if (gameInstance) {
+        gameInstance.SendMessage(objectName, funcName);
+      }
+    }
+
+    script.onload = () => {
+      if (isMobile) return;
+      createUnityInstance(canvas, config, (progress) => {
+        // progressBarFull.style.width = 100 * progress + "%";
+        progress = Math.floor(progress * 100);
+        document.getElementById('unity-loading-text').innerText = "Loading: " + progress + "%";
+      }).then((unityInstance) => {
+        loadingBar.style.display = "none";
+        gameInstance = unityInstance;
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+
+    function onResize() {
+
+      let width = Math.floor(window.innerWidth);
+      let height = Math.floor(window.innerHeight);
+      // let rateScreen = width / height;
+
+      //rate expect
+      // let rateMax = 1920 / 1080;
+      // let rateMin = 1.2;
+
+      // if (rateScreen < rateMin) {
+      //   height = width / rateMin;
+      // } else if (rateScreen > rateMax) {
+      //   width = height * rateMax;
+      // }
+
+
+      container.style.width = canvas.style.width = width + "px";
+      container.style.height = canvas.style.height = height + "px";
+      // let left = Math.floor((window.innerWidth - width) / 2)
+      // container.style.left = left + "px";
+      // let top = Math.floor((window.innerHeight - height) / 2);
+      // container.style.top = top + "px";
+    }
+
+    window.addEventListener("resize", onResize)
+    onResize()
+
+    //shop, terminal, game
+    window.SHOP_ID = "{{shop.id}}";
+    window.TERMINAL_ID = "{{terminal.id}}";
+    window.GAME_ID = "{{game_id}}";
+
+    //func
+    window.GotoLobby = function () {
+      window.open('http://firegames.ebizworldsolutions.com/game/dashboard', '_self');
+    }
+  </script>
+</body>
+
+</html>
