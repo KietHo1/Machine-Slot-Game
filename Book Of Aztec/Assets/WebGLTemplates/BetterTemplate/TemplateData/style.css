@@ -1,0 +1,110 @@
+body {
+    padding: 0;
+    margin: 0
+}
+
+#unity-container {
+    position: absolute
+}
+
+
+#unity-container.unity-mobile {
+    width: 100%;
+    height: 100%
+}
+
+#unity-canvas {
+    background: url('BGLoading.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.unity-mobile #unity-canvas {
+    width: 100%;
+    height: 100%
+}
+
+#unity-loading-bar {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none
+}
+
+#unity-logo {
+    width: 100%;
+    aspect-ratio: 1.6;
+    background: url('unity-logo-dark.png') no-repeat center fixed;
+    background-size: contain;
+}
+
+/* #unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; background: url('progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center } */
+#unity-loading-text {
+    width: 100%;
+    color: #ffffff;
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* #unity-footer {
+    position: relative
+} */
+
+/* .unity-mobile #unity-footer {
+    display: none
+} */
+
+#unity-webgl-logo {
+    float: left;
+    width: 204px;
+    height: 38px;
+    background: url('unity-logo-dark.png') no-repeat center
+}
+
+#unity-build-title {
+    float: right;
+    margin-right: 10px;
+    line-height: 38px;
+    font-family: arial;
+    font-size: 18px
+}
+
+#unity-fullscreen-button {
+    float: right;
+    width: 38px;
+    height: 38px;
+    background: url('fullscreen-button.png') no-repeat center
+}
+
+#unity-warning {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    top: 25%;
+    background: url('pop-up notification.png') no-repeat center;
+    background-size: contain;
+    display: none
+}
+
+#unity-warning-content {
+    position: absolute;
+    width: 65%;
+    height: 20%;
+    left: 30%;
+    top: 42%;
+    color: #FEE87E;
+    font-family: 'DM Serif Text', sans-serif;
+    font-size: 3vmin;
+    font-weight: normal;
+    background: linear-gradient(to top, #FEE87E, #FFFFBC);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
