@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f712b5079a659404fbd1240a93282055, type: 3}
+  m_Name: Champagne Party
+  m_EditorClassIdentifier: 
+  gameName: Champagne Party
+  column: 5
+  row: 3
+  betMultipler: 1
+  bonusWinOccur: 50
+  symbols:
+  - type: 5
+    symbol: {fileID: 21300000, guid: b4a3b3e4965dd7448a3069695f76f22f, type: 3}
+    blurSymbol: {fileID: 21300000, guid: b4a3b3e4965dd7448a3069695f76f22f, type: 3}
+    anims:
+    - {fileID: 4927802272529202307, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    - {fileID: -4010591162653403113, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    - {fileID: -3795084841221753329, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    - {fileID: -4926861556926620947, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    - {fileID: -7664525714408363214, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    - {fileID: 8954941203069728780, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    - {fileID: 8122350847908308007, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    - {fileID: 3592180645976022475, guid: 27f80aed55e1c814da56c6abe028fb55, type: 3}
+    rewards:
+    - 0
+    - 10
+    - 100
+    - 2000
+    - 0
+    appearOccur: 10
+  - type: 0
+    symbol: {fileID: 21300000, guid: 08013a7a929bc3f448e71759648b41f2, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 08013a7a929bc3f448e71759648b41f2, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 08013a7a929bc3f448e71759648b41f2, type: 3}
+    rewards:
+    - 0
+    - 7
+    - 10
+    - 20
+    - 1000
+    appearOccur: 30
+  - type: 0
+    symbol: {fileID: 21300000, guid: b59ae176e2ea74548b8ebd9a64a747bf, type: 3}
+    blurSymbol: {fileID: 21300000, guid: b59ae176e2ea74548b8ebd9a64a747bf, type: 3}
+    anims:
+    - {fileID: 21300000, guid: b59ae176e2ea74548b8ebd9a64a747bf, type: 3}
+    rewards:
+    - 0
+    - 5
+    - 10
+    - 20
+    - 1000
+    appearOccur: 30
+  - type: 0
+    symbol: {fileID: 21300000, guid: 60c01be0723701c40af67bd5d3bb9136, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 60c01be0723701c40af67bd5d3bb9136, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 60c01be0723701c40af67bd5d3bb9136, type: 3}
+    rewards:
+    - 0
+    - 0
+    - 5
+    - 20
+    - 100
+    appearOccur: 40
+  - type: 0
+    symbol: {fileID: 21300000, guid: 559c1c1ae7d5a4a4691befaee7fa1280, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 559c1c1ae7d5a4a4691befaee7fa1280, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 559c1c1ae7d5a4a4691befaee7fa1280, type: 3}
+    rewards:
+    - 0
+    - 0
+    - 5
+    - 20
+    - 100
+    appearOccur: 40
+  - type: 0
+    symbol: {fileID: 21300000, guid: 789e826a61f021047a657727c9002837, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 789e826a61f021047a657727c9002837, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 789e826a61f021047a657727c9002837, type: 3}
+    rewards:
+    - 0
+    - 0
+    - 5
+    - 20
+    - 100
+    appearOccur: 40
+  - type: 0
+    symbol: {fileID: 21300000, guid: 94860174622b9c04f82259ec0f741aff, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 94860174622b9c04f82259ec0f741aff, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 94860174622b9c04f82259ec0f741aff, type: 3}
+    rewards:
+    - 0
+    - 0
+    - 5
+    - 25
+    - 100
+    appearOccur: 40
+  - type: 0
+    symbol: {fileID: 21300000, guid: d09da5547c8496a4487a83a40780a9d1, type: 3}
+    blurSymbol: {fileID: 21300000, guid: d09da5547c8496a4487a83a40780a9d1, type: 3}
+    anims:
+    - {fileID: 21300000, guid: d09da5547c8496a4487a83a40780a9d1, type: 3}
+    rewards:
+    - 0
+    - 0
+    - 5
+    - 20
+    - 100
+    appearOccur: 40
+  - type: 0
+    symbol: {fileID: 21300000, guid: 10a309c63cd9c59408b4d879119027f7, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 10a309c63cd9c59408b4d879119027f7, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 10a309c63cd9c59408b4d879119027f7, type: 3}
+    rewards:
+    - 0
+    - 3
+    - 5
+    - 20
+    - 100
+    appearOccur: 40
+  - type: 0
+    symbol: {fileID: 21300000, guid: 6d689a1355fbdb749a09f6805e7c2f03, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 6d689a1355fbdb749a09f6805e7c2f03, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 6d689a1355fbdb749a09f6805e7c2f03, type: 3}
+    rewards:
+    - 0
+    - 3
+    - 5
+    - 20
+    - 100
+    appearOccur: 40
+  - type: 3
+    symbol: {fileID: 21300000, guid: 8a68bc14923c1a8469614a646e205167, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 8a68bc14923c1a8469614a646e205167, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 8a68bc14923c1a8469614a646e205167, type: 3}
+    rewards:
+    - 0
+    - 0
+    - 60
+    - 600
+    - 0
+    appearOccur: 10
+  - type: 1
+    symbol: {fileID: 21300000, guid: 4a73aaa8de6b3ef41b6ae405b33cd022, type: 3}
+    blurSymbol: {fileID: 21300000, guid: 4a73aaa8de6b3ef41b6ae405b33cd022, type: 3}
+    anims:
+    - {fileID: 21300000, guid: 4a73aaa8de6b3ef41b6ae405b33cd022, type: 3}
+    rewards:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    appearOccur: 10
+  winningLines:
+  - positions: 0100000001000000010000000100000001000000
+    sprite: {fileID: -729848317111800829, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0200000002000000020000000200000002000000
+    sprite: {fileID: 2992021059522813734, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0000000000000000000000000000000000000000
+    sprite: {fileID: 8563779344347924539, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0200000001000000000000000100000002000000
+    sprite: {fileID: 7816252765288831513, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0000000001000000020000000100000000000000
+    sprite: {fileID: 6921570694773575043, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0200000002000000010000000000000000000000
+    sprite: {fileID: 2084644683700128804, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0000000000000000010000000200000002000000
+    sprite: {fileID: -5958501854805602658, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0100000002000000010000000000000001000000
+    sprite: {fileID: -5099332489305778936, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0100000000000000010000000200000001000000
+    sprite: {fileID: 1116707085320615333, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0200000001000000020000000100000002000000
+    sprite: {fileID: 3424215950235699102, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0000000001000000000000000100000000000000
+    sprite: {fileID: 4206508424946044205, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0200000001000000010000000100000001000000
+    sprite: {fileID: 759592306994251132, guid: 170029405f7092b458a2b9e1488ba33f, type: 3}
+  - positions: 0000000001000000010000000100000001000000
+    sprite: {fileID: -2372233890963049845, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0100000001000000020000000200000002000000
+    sprite: {fileID: -1268983962359200846, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0100000001000000000000000000000000000000
+    sprite: {fileID: -5065613529965820446, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0100000002000000020000000200000002000000
+    sprite: {fileID: -1958138018229322650, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0100000000000000000000000000000000000000
+    sprite: {fileID: 1071566756779171882, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0200000002000000020000000200000001000000
+    sprite: {fileID: -9203421379844442981, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0000000000000000000000000000000001000000
+    sprite: {fileID: -7273443955371995790, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0000000000000000010000000000000000000000
+    sprite: {fileID: -4753172112317400179, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  - positions: 0200000002000000010000000200000002000000
+    sprite: {fileID: -3806851954367968198, guid: 170029405f7092b458a2b9e1488ba33f,
+      type: 3}
+  currency: 0
