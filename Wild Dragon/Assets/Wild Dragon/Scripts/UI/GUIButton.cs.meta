@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a20ac3307fa83834cabdb1477d160087
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - txt: {instanceID: 0}
+  - enableSpr: {instanceID: 0}
+  - disableSpr: {instanceID: 0}
+  - hoverSpr: {instanceID: 0}
+  - highlightMat: {fileID: 2100000, guid: 0a2b84156b80c1b47b7718364f4f3202, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
